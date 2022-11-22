@@ -19,7 +19,7 @@ https://localhost:7234/api/Interest/1
 }
 
 POST add links for Person and Interest
-https://localhost:7234/api/Website/4/add
+https://localhost:7234/api/Website/
 { 
   "webpageLink": "www.minecraft.not",
   "interestID": 2, 

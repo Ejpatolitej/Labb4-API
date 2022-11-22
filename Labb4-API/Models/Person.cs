@@ -10,7 +10,6 @@ namespace Labb4_API.Models
         public string LastName { get; set; }
         public string Phone { get; set; }
 
-        public ICollection<Interest> Interests { get; set; }
-        public Website Website { get; set; }
+        public ICollection<Interest>? Interests { get; set; }
     }
 }

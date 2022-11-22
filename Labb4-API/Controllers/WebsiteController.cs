@@ -30,9 +30,9 @@ namespace Labb4_API.Controllers
             return NotFound();
         }
 
-        //UPDATE WEBSITE
+        //ADD WEBSITE
         [HttpPost]
-        [Route("{id}/add")]
+        [Route("{id}")]
         public async Task<ActionResult<Website>> Add(Website website)
         {
             if (website != null)
@@ -43,5 +43,15 @@ namespace Labb4_API.Controllers
 
             return BadRequest();
         }
+
+        //ADD WEBSITE
+        [HttpPost]
+        public async Task<Website> AddWebsite(Website website, int personId, int interestId)
+        {
+            var result = await _context.Websites.AddAsync(new Website { PersonID = personId, InterestID = interestId});
+            await _context.SaveChangesAsync();
+            return result.Entity;
+        }
+
     }
 }

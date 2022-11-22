@@ -27,7 +27,7 @@ namespace Labb4_API.Services
 
         public async Task<Interest> GetInterest(int id)
         {
-            return await _context.Interests.Include(p => p.Person).ThenInclude(w => w.Interests).FirstOrDefaultAsync(i => i.InterestID == id);
+            return await _context.Interests.FirstOrDefaultAsync(i => i.InterestID == id);
         }
     }
 }

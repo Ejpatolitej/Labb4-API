@@ -20,8 +20,7 @@ namespace Labb4_API.Services
 
         public async Task<Website> GetWebsite(int id)
         {
-            return await _context.Websites.Include(p => p.Persons.Website)
-                .FirstOrDefaultAsync(w => w.WebsiteID == id);
+            return await _context.Websites.FirstOrDefaultAsync(w => w.WebsiteID == id);
         }
     }
 }

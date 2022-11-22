@@ -14,8 +14,8 @@ namespace Labb4_API.Services
 
         public async Task<IEnumerable<Person>> GetInterests(int id)
         {
-            return (IEnumerable<Person>)await _dbContext.people
-                .Include(p => p.Website)
+            return await _dbContext.people
+                .Include(i => i.Interests)
                 .Where(p => p.PersonID == id).ToListAsync();
         }
 
@@ -23,6 +23,7 @@ namespace Labb4_API.Services
         {
             return await _dbContext.people
                 .Include(p => p.Interests)
+                .ThenInclude(w => w.Websites)
                 .Where(p => p.PersonID == id).ToListAsync();
         }
 

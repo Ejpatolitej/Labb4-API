@@ -19,7 +19,6 @@ namespace Labb4_API.Controllers
 
         //GET INTERESTS
         [HttpGet("{id}")]
-        [Route("{id}/interest")]
         public async Task<ActionResult<Interest>> GetInterest(int id)
         {
             var result = await _interestRepo.GetInterest(id);
@@ -32,7 +31,6 @@ namespace Labb4_API.Controllers
 
         //UPDATE INTERESTS
         [HttpPut("{id}")]
-        [Route("{id}/update")]
         public async Task<ActionResult<Interest>> updateInterest(int id, Interest update)
         {
             var websiteToUpdate = await _interestRepo.GetInterest(id);

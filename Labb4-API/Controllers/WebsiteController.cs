@@ -19,7 +19,7 @@ namespace Labb4_API.Controllers
         }
 
         //GET WEBSITE
-        [HttpGet("{id:int}")]
+        [HttpGet("{id}")]
         public async Task<ActionResult<Website>> GetWebsite(int id)
         {
             var result = await _websiteRepo.GetWebsite(id);
@@ -32,6 +32,7 @@ namespace Labb4_API.Controllers
 
         //UPDATE WEBSITE
         [HttpPost]
+        [Route("{id}/add")]
         public async Task<ActionResult<Website>> Add(Website website)
         {
             if (website != null)
